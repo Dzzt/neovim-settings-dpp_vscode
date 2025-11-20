@@ -8,48 +8,52 @@ local api = vim.api
 -- dpp 動作設定の typescript
 local vsc_dpp_config_ts = fn.expand("~/.config/nvim_vscode/dpp/vsc_dpp_config.ts")
 
--- dppのcache
-local dpp_base = fn.expand("~/.cache/dpp_vscode")
+--
+--~/.cache/dpp_vscode 
+local cache_dir = fn.expand("~/.cache/dpp_vscode/repos/github.com")
+local repo_dir = cache_dir .. "/repos/github.com"
+local dpp_src = repo_dir .. "/Shougo/dpp.vim"
 
---github からのインストール先
-local cache_dir = dpp_base .. "/repos/github.com"
+-- denops.vim installed path
+local denops_src = repo_dir .. "/vim-denops/denops.vim"
 
--- dpp.vim はruntimepath の最初に追加しなければならない
-local dpp_src = cache_dir .. "/Shougo/dpp.vim"
+-- paths of dpp extentions
+local ext_lazy = repo_dir .. "/Shougo/dpp-ext-lazy"
+local ext_toml = repo_dir .. "/Shougo/dpp-ext-toml"
+local protocl_git = repo_dir .. "/Shougo/dpp-protocol-git"
+
+
+--
+-- dpp.vim must be added for the first place
 opt.runtimepath:prepend(dpp_src)
 
--- dpp.vim を require
-local dpp = require("dpp")
-
--- denops.vim はここでは runtimepath には追加しない
-local denops_src = cache_dir .. "/vim-denops/denops.vim"
-
--- dpp コンポーネントのパスをruntimepathの最後に追加
-local ext_lazy = cache_dir .. "/Shougo/dpp-ext-lazy"
-local ext_toml = cache_dir .. "/Shougo/dpp-ext-toml"
-local protocl_git = cache_dir .. "/Shougo/dpp-protocol-git"
-
+-- and add extensions
 opt.runtimepath:append(ext_lazy)
 opt.runtimepath:append(ext_toml)
 opt.runtimepath:append(protocl_git)
 
 
--- dpp.vim がロードされていたら
-if dpp.load_state(dpp_base) then
+--
+-- require dpp.vim
+local dpp = require("dpp")
 
-  -- denops.vim を runtimepath に追加
+-- when loading dpp.vim is successful
+if dpp.load_state(cache_dir) then
+
+  -- add denops.vim to runtimepaths
   opt.runtimepath:prepend(denops_src)
 
-  -- 
+  -- make state.vim as defined in vsc_dpp_config_ts
   api.nvim_create_autocmd("User", {
 	pattern = "DenopsReady",
   	callback = function ()
 		vim.notify("vim load_state is failed.")
-  		dpp.make_state(dpp_base, vsc_dpp_config_ts)
+  		dpp.make_state(cache_dir, vsc_dpp_config_ts)
   	end
   })
 end
 
+-- to check the result of dpp#make_state() 
 --api.nvim_create_autocmd("User", {
 --	pattern = "Dpp:makeStatePost",
 --	callback = function ()

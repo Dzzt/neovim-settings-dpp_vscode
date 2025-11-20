@@ -31,7 +31,7 @@ export class Config extends BaseConfig {
 
         const [context, options] = await args.contextBuilder.get(args.denops);
 
-        // ユーザー指定のTOMLファイルリスト
+        // specify toml files
         const tomlFiles = [
             "dpp.toml",
             "dpp_lazy.toml",
@@ -39,7 +39,7 @@ export class Config extends BaseConfig {
 
         const tomls: typeToml[] = [];
 
-        // すべてのTOMLファイルをループ処理
+        // load both of toml files
         for (const file of tomlFiles) {
             const tomlPath = await fn.expand(
                 args.denops,

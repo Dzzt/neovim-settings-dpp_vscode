@@ -31,10 +31,6 @@ for _,config in ipairs(configs) do
     require(config)
 end
 
--- easymotion
-api.nvim_set_var('EasyMotion_do_mapping',0)
-
-
 --manage IME
 api.nvim_create_autocmd({'InsertLeave','FocusGained'},{
     pattern = {"*"},
