@@ -1,0 +1,17 @@
+# ~/.config/vscnvim/dpp/toml/dpp.toml
+
+
+[[plugins]]
+repo = 'Shougo/dpp.vim'
+
+[[plugins]]
+repo = 'Shougo/dpp-ext-toml'
+on_source = 'dpp'
+
+[[plugins]]
+repo = 'Shougo/dpp-ext-lazy'
+on_source = 'dpp'
+
+[[plugins]]
+repo = 'Shougo/dpp-protocol-git'
+on_source = 'dpp'

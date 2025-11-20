@@ -1,0 +1,26 @@
+# Plugins for lazy load
+
+#Config for denops
+##############################################################
+#vim-denops(needed for Shougowares)
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+on_event = ['VimEnter']
+lua_source = '''
+    require('config_denops')
+'''
+
+
+[[plugins]]
+repo = 'hadronized/hop.nvim'
+on_map = ['<Leader>f', '<Leader>t', '<Leader><Leader>f', '<Leader><Leader>t']
+lua_post_source='''
+    require('config_hop')
+'''
+
+[[plugins]]
+repo = 'kylechui/nvim-surround'
+on_map = ['ys', 'cs', 'ds', 'yS', 'cS', 'dS']
+lua_source = '''
+    require("nvim-surround").setup{}
+'''
