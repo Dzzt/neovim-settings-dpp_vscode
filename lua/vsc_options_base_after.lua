@@ -5,9 +5,6 @@ local cmd = vim.cmd
 -- options for basic behavior(load after dein)
 ---------------------------------------------------
 
--- Timeout Settings
-    opt.timeoutlen = 500
-    opt.ttimeoutlen= 1000
 
 -- Redraw only when it's needed
     opt.lazyredraw = true

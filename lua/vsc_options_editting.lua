@@ -28,6 +28,10 @@ local opt = vim.opt
     --vim.g.clipboard = vim.g.vscode_clipboard
     opt.clipboard:append{'unnamedplus'}
 
+-- Timeout Settings
+    --opt.timeoutlen = 500
+    --opt.ttimeoutlen= 1000
+
 -- ---------------------------------------------------------
 -- Indentation
 

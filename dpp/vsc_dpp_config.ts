@@ -57,7 +57,7 @@ export class Config extends BaseConfig {
                     path: tomlPath,
                     options: {
                         lazy: file === "dpp_lazy.toml",
-                        frozen: true,
+                        //frozen: true,
                     },
                 },
             )) as typeToml | undefined;
