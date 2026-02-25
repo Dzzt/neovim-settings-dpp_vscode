@@ -29,8 +29,8 @@ local opt = vim.opt
     opt.clipboard:append{'unnamedplus'}
 
 -- Timeout Settings
-    --opt.timeoutlen = 500
-    --opt.ttimeoutlen= 1000
+    opt.timeoutlen = 200
+    opt.ttimeoutlen= 80
 
 -- ---------------------------------------------------------
 -- Indentation

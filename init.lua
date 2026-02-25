@@ -12,14 +12,15 @@ local api = vim.api
 opt.shadafile = 'NONE'
 
 local vscnvim_dir =fn.expand('~/.config/nvim_vscode')
+local dpp_config_dir = vscnvim_dir .. [[/dpp]]
 
 opt.runtimepath:append(vscnvim_dir)
 opt.runtimepath:append(vscnvim_dir .. '/lua')
+opt.runtimepath:append(dpp_config_dir)
 
 
 -- Load configs
 local configs = {
-    "vsc_runtimepaths",
     "vsc_options_base_before",
     "vsc_dpp_conf",
     "vsc_options_base_after",
