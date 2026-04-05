@@ -11,7 +11,7 @@ local api = vim.api
 --using different Shada file for vscode neovim
 opt.shadafile = 'NONE'
 
-local vscnvim_dir =fn.expand('~/.config/nvim_vscode')
+local vscnvim_dir =fn.expand('~/.config/nvim_vscod')
 
 opt.runtimepath:append(vscnvim_dir)
 opt.runtimepath:append(vscnvim_dir .. '/lua')
@@ -21,7 +21,7 @@ opt.runtimepath:append(vscnvim_dir .. '/lua')
 local configs = {
     "vsc_runtimepaths",
     "vsc_options_base_before",
-    "vsc_dpp_conf",
+    "vsc_plugins",
     "vsc_options_base_after",
     "vsc_options_editting",
     "vsc_keymaps",
