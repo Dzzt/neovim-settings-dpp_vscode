@@ -11,15 +11,20 @@ local api = vim.api
 --using different Shada file for vscode neovim
 opt.shadafile = 'NONE'
 
+<<<<<<< HEAD
 local vscnvim_dir =fn.expand('~/.config/nvim_vscod')
+=======
+local vscnvim_dir =fn.expand('~/.config/nvim_vscode')
+local dpp_config_dir = vscnvim_dir .. [[/dpp]]
+>>>>>>> 60062ced5a8b68ea91603a3b85aaa7dc04fb6a21
 
 opt.runtimepath:append(vscnvim_dir)
 opt.runtimepath:append(vscnvim_dir .. '/lua')
+opt.runtimepath:append(dpp_config_dir)
 
 
 -- Load configs
 local configs = {
-    "vsc_runtimepaths",
     "vsc_options_base_before",
     "vsc_plugins",
     "vsc_options_base_after",
