@@ -1,4 +1,3 @@
-
 --  Begin init.vim for Visual Studio Code
 --
 local fn = vim.fn
@@ -11,14 +10,10 @@ local api = vim.api
 --using different Shada file for vscode neovim
 opt.shadafile = 'NONE'
 
-=======
-local vscnvim_dir =fn.expand('~/.config/nvim_vscode')
-local dpp_config_dir = vscnvim_dir .. [[/dpp]]
->>>>>>> 60062ced5a8b68ea91603a3b85aaa7dc04fb6a21
+local vscnvim_dir = fn.expand('~/.config/nvim_vscode')
 
 opt.runtimepath:append(vscnvim_dir)
 opt.runtimepath:append(vscnvim_dir .. '/lua')
-opt.runtimepath:append(dpp_config_dir)
 
 
 -- Load configs
@@ -30,13 +25,12 @@ local configs = {
     "vsc_keymaps",
 }
 
-for _,config in ipairs(configs) do
+for _, config in ipairs(configs) do
     require(config)
 end
 
 --manage IME
-api.nvim_create_autocmd({'InsertLeave','FocusGained'},{
-    pattern = {"*"},
-    command = "silent! !"..fn.expand("~/bin/zenhan.exe").." 0",
+api.nvim_create_autocmd({ 'InsertLeave', 'FocusGained' }, {
+    pattern = { "*" },
+    command = "silent! !" .. fn.expand("~/bin/zenhan.exe") .. " 0",
 })
-
