@@ -14,3 +14,6 @@ keymap.set('t','<ESC>',[[<C-\><C-n>]])
 keymap.set("n","u","<Cmd>call VSCodeNotify('undo')<CR>")
 keymap.set("n","<C-r>","<Cmd>call VSCodeNotify('redo')<CR>")
 
+--
+keymap.set("x","S","Nop")
+keymap.set("x","s","Nop")

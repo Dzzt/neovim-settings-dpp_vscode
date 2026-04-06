@@ -11,8 +11,6 @@ local api = vim.api
 --using different Shada file for vscode neovim
 opt.shadafile = 'NONE'
 
-<<<<<<< HEAD
-local vscnvim_dir =fn.expand('~/.config/nvim_vscod')
 =======
 local vscnvim_dir =fn.expand('~/.config/nvim_vscode')
 local dpp_config_dir = vscnvim_dir .. [[/dpp]]
