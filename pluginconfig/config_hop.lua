@@ -1,6 +1,6 @@
--- configuration for hadronized/hop.nvim
+-- configuration for smoka7/hop.nvim
 
--- local keymap = vim.keymap
+local keymap = vim.keymap
 
 
 local hop = require('hop')
