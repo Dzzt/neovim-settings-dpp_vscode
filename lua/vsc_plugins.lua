@@ -1,5 +1,5 @@
 local pack = vim.pack
-local config_dir ='C:/Users/ryo_nagahama/.config/nvim_vscode/pluginconfig/?.lua'
+local config_dir = 'C:/Users/ryo_nagahama/.config/nvim_vscode/pluginconfig/?.lua'
 
 pack.add({
   "https://github.com/smoka7/hop.nvim",
