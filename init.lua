@@ -1,6 +1,7 @@
 --  Begin init.vim for Visual Studio Code
---
-local fn = vim.fn
+-- --
+
+-- local fn = vim.fn
 local opt = vim.opt
 local api = vim.api
 
