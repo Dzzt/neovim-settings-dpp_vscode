@@ -1,13 +1,9 @@
 --  Begin init.vim for Visual Studio Code
--- -- -- --
-
-
---
+-- -- --------------------------------------------------
 local fn = vim.fn
 local opt = vim.opt
 local api = vim.api
 
---  --------------------------------------------------
 --  Basic settings
 
 --using different Shada file for vscode neovim
@@ -25,7 +21,6 @@ local configs = {
 	"vsc_options_base_after",
 	"vsc_options_editting",
 	"vsc_keymaps",
-	"vsc_vscodeapi",
 }
 
 for _, config in ipairs(configs) do
