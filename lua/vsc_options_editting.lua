@@ -17,7 +17,7 @@ opt.showmatch = true
 
 -- Allow backspace over autoindent,
 -- line breakes and start of insert action
-opt.backspace = 'start,eol,indent'
+opt.backspace = "start,eol,indent"
 
 -- Stop certain movements from always going to the
 -- first character of a line.
@@ -26,16 +26,11 @@ opt.startofline = false
 -- share clipboard with os
 
 --vim.g.clipboard = vim.g.vscode_clipboard
-opt.clipboard:append { 'unnamedplus' }
+opt.clipboard:append({ "unnamedplus" })
 
 -- Timeout Settings
 opt.timeoutlen = 400
 opt.ttimeoutlen = 80
-
-
--- Suppless logs
-opt.report = 999999
-opt.shortmess:append("a")
 
 -- ---------------------------------------------------------
 -- Indentation
