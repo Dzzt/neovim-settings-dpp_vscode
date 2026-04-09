@@ -22,34 +22,18 @@ flash.setup({
 -- キーマッピングの再現
 local keymap = vim.keymap
 
--- <Leader>f : 1文字入力してジャンプ (hop.hint_char1)
-keymap.set("n", "<Leader>f", function()
+-- 入力制限なしの汎用ジャンプコマンド
+keymap.set('n', '<Leader><Leader>f', function()
 	flash.jump({
-		search = { mode = "search", max_length = 1 },
-		label = { after = false, before = true },
+		search = {
+			mode = "search",
+			max_length = nil, -- 文字数制限なし。何文字でも打てる
+		},
+		-- ラベルを表示するタイミングの設定
+		label = {
+			-- true にすると、1文字打った瞬間から画面全体にラベルが出る
+			after = true,
+			--min_pattern_length = 2,
+		},
 	})
-end, { desc = "Flash 1-char jump" })
-
--- <Leader>t : 1文字入力してその手前にジャンプ (hop.hint_char1 + offset -1)
-keymap.set("n", "<Leader>t", function()
-	flash.jump({
-		search = { mode = "search", max_length = 1 },
-		offset = -1, -- これで対象文字の1つ前に着地します
-		label = { after = false, before = true },
-	})
-end, { desc = "Flash 1-char jump (before)" })
-
--- <Leader><Leader>f : 2文字入力してジャンプ (hop.hint_char2)
-keymap.set("n", "<Leader><Leader>f", function()
-	flash.jump({
-		search = { mode = "search", max_length = 2 },
-	})
-end, { desc = "Flash 2-char jump" })
-
--- <Leader><Leader>t : 2文字入力してその手前にジャンプ (hop.hint_char2 + offset -1)
-keymap.set("n", "<Leader><Leader>t", function()
-	flash.jump({
-		search = { mode = "search", max_length = 2 },
-		offset = -1,
-	})
-end, { desc = "Flash 2-char jump (before)" })
+end, { desc = "Flash Jump" })
