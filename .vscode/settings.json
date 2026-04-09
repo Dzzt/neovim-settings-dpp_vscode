@@ -1,16 +1,15 @@
 {
-  "Lua.workspace.library": [
-    "$VIMRUNTIME/lua"
-  ],
-  "Lua.diagnostics.unusedLocalExclude": ["*"],
-  "Lua.language.fixIndent": false,
-  "Lua.diagnostics.disable": ["unused-local"],
-  "Lua.diagnostics.globals": ["vim"],
-  "Lua.runtime.special": { "vim": "_G" },
-  "[lua]": {
-      "editor.codeActionsOnSave": {
-          "source.fixAll": "never"
-      },
-      "editor.formatOnType": false
-  },
+    
+    
+    
+    //"Lua.workspace.checkThirdParty": false,
+    //"Lua.diagnostics.unusedLocalExclude": ["*"],
+    //"Lua.language.fixIndent": false,
+    //"Lua.diagnostics.disable": ["unused-local"],
+    "Lua.diagnostics.globals": ["vim"],
+    "Lua.runtime.special": { "vim": "_G" },
+    //"editor.formatOnType": false,
+    //"editor.codeActionsOnSave": {
+    //    "source.fixAll": "never"
+    //}
 }
