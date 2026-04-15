@@ -19,7 +19,6 @@ flash.setup({
 	},
 })
 
--- キーマッピングの再現
 local keymap = vim.keymap
 
 -- 入力制限なしの汎用ジャンプコマンド

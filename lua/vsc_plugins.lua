@@ -1,8 +1,9 @@
+--vim.pack
+
 local pack = vim.pack
 local config_dir = "C:/Users/ryo_nagahama/.config/nvim_vscode/pluginconfig/?.lua"
 
 pack.add({
-	--"https://github.com/smoka7/hop.nvim",
 	"https://github.com/folke/flash.nvim",
 	"https://github.com/kylechui/nvim-surround",
 })
