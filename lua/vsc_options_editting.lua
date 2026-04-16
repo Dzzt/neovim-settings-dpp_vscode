@@ -32,6 +32,9 @@ opt.clipboard:append({ "unnamedplus" })
 opt.timeoutlen = 400
 opt.ttimeoutlen = 80
 
+--use undo files
+opt.undofile = true
+
 -- ---------------------------------------------------------
 -- Indentation
 
