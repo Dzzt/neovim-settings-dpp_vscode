@@ -1,4 +1,17 @@
 {
     "Lua.diagnostics.globals": ["vim"],
     "Lua.runtime.special": { "vim": "_G" },
+    "Lua.workspace.ignoreDir": [
+        ".vscode",
+        "nvim011",
+        "plugins"
+    ],
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/nvim011": true,
+    }
 }
