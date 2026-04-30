@@ -13,7 +13,6 @@ local vscnvim_dir = fn.expand("~/.config/nvim_vscode")
 
 opt.runtimepath:append(vscnvim_dir)
 opt.runtimepath:append(vscnvim_dir .. "/lua")
-opt.runtimepath:append(vscnvim_dir .. "/plugins")
 
 -- Load configs
 local configs = {
