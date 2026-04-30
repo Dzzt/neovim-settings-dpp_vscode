@@ -1,14 +1,9 @@
---vim.pack
+local fn = vim.fn
+local opt = vim.opt
+local plugin_base = fn.expand("~/.config/nvim_vscode/plugins")
 
-local pack = vim.pack
-local config_dir = "C:/Users/ryo_nagahama/.config/nvim_vscode/pluginconfig/?.lua"
-
-pack.add({
-	"https://github.com/folke/flash.nvim",
-	"https://github.com/kylechui/nvim-surround",
-})
-
-package.path = package.path .. ";" .. config_dir
-
+opt.runtimepath:append(plugin_base .. "/flash.nvim")
 require("config_flash")
+
+opt.runtimepath:append(plugin_base .. "/nvim-surround")
 require("config_nvimsurround")
